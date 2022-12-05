@@ -20,7 +20,7 @@ router.get('/:id', ash(async(req, res) => {
   res.status(200).json(employee);
 }));
 
-// Delete instructor
+// Delete employee
 router.delete('/:id', ash(async(req, res) => {
   await Employee.destroy({
     where: {
@@ -30,13 +30,13 @@ router.delete('/:id', ash(async(req, res) => {
   res.status(200).json("Employee deleted");
 }));
 
-// Add new instructor
+// Add new employee
 router.post('/', ash(async(req, res) => {
   let newEmployee = await Employee.create(req.body);
   res.status(200).json(newEmployee);
 }));
 
-// Edit instructor
+// Edit employee
 router.put('/:id', ash(async(req, res) => {
   await Employee.update(req.body, {
     where: {

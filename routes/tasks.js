@@ -10,16 +10,16 @@ const ash = require('express-async-handler');
 
 /** GET ALL COURSES: then/catch */
 // router.get('/', function(req, res, next) {
-//   Course.findAll({include: [Instructor]})
-//     .then(courses => res.status(200).json(courses))
+//   Task.findAll({include: [Employee]})
+//     .then(tasks => res.status(200).json(tasks))
 //     .catch(err => next(err));
 // });
 
 /** GET ALL COURSES: async/await */
 // router.get('/', async (req, res, next) => {
 //   try {
-//     let courses = await Course.findAll({include: [Instructor]});
-//     res.status(200).json(courses);
+//     let tasks = await Task.findAll({include: [Employee]});
+//     res.status(200).json(tasks);
 //   } catch(err) {
 //     next(err);
 //   }
@@ -29,7 +29,7 @@ const ash = require('express-async-handler');
 // automatically catches any error and sends to middleware
 // same as using try/catch and calling next(error)
 router.get('/', ash(async(req, res) => {
-  //{include: [Instructor]}
+  //{include: [Employee]}
   let tasks = await Task.findAll();
   res.status(200).json(tasks);
 }));

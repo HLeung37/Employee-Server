@@ -1,6 +1,6 @@
 const pgtools = require('pgtools');
 const {dbName, dbUser, dbPwd} = require('./configDB');
-const PORT = process.env.PORT || 5000;
+const PORT = process.env.PORT || 5432;
 
 const config = {
     user: dbUser,

@@ -1,7 +1,7 @@
 const Sequelize = require('sequelize');
 const db = require('../db');
 
-const Task = db.define("task", {
+const Task = db.define("tasks", {
 
   description: {
     type: Sequelize.STRING,
@@ -13,13 +13,12 @@ const Task = db.define("task", {
     allowNull: false
   },
 
-  assignedTo: {
+  employeeId: {
     type: Sequelize.INTEGER
   },
 
   status: {
     type: Sequelize.BOOLEAN,
-    allowNull: false
   },
   // isOpen: {
   //   type: Sequelize.BOOLEAN,
