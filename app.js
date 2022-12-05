@@ -10,7 +10,7 @@ const syncDatabase = async () => {
   try {
     //the {force: true} option will clear the database tables
     //every time we restart the server
-    //remove the option if you want the data to persist, ie: 
+    //remove the option if you want the data to persist, ie:
     //await db.sync();
 
     await db.sync({force: true});
@@ -19,7 +19,7 @@ const syncDatabase = async () => {
     console.log('--------Successfully seeded db--------');
   } catch (err) {
     console.error('syncDB error:', err);
-  }  
+  }
 }
 
 //import express library
@@ -54,16 +54,16 @@ const configureApp = async () => {
 
   // Handle page not found:
   // gets triggered when a request is made to
-  // an undefined route 
+  // an undefined route
   app.use((req, res, next) => {
     const error = new Error("Not Found, Please Check URL!");
     error.status = 404;
     next(error);
   });
 
-  // Error-handling middleware: 
+  // Error-handling middleware:
   // all express errors get passed to this
-  // when next(error) is called 
+  // when next(error) is called
   app.use((err, req, res, next) => {
     console.error(err);
     console.log(req.originalUrl);
@@ -91,5 +91,5 @@ const bootApp = async () => {
 bootApp();
 
 
-const PORT = 5001;
+const PORT = process.env.PORT || 5000;
 app.listen(PORT, console.log(`Server started on ${PORT}`));

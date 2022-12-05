@@ -1,14 +1,14 @@
 const Sequelize = require('sequelize');
 const db = require('../db');
 
-const Instructor = db.define("instructor", {
+const Employee = db.define("employee", {
 
-  firstname: {
+  firstName: {
     type: Sequelize.STRING,
     allowNull: false
   },
 
-  lastname: {
+  lastName: {
     type: Sequelize.STRING,
     allowNull: false
   },
@@ -17,11 +17,6 @@ const Instructor = db.define("instructor", {
     type: Sequelize.STRING,
   },
 
-  imageUrl: {
-    type: Sequelize.STRING,
-  }
-
-
 });
 
-module.exports = Instructor;
+module.exports = Employee;
